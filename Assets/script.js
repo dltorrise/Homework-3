@@ -22,10 +22,13 @@ for (var i = 0; i <= passwordLength; i++) {
   password += chars.substring(randomNumber, randomNumber +1);
  }
 
+ const html = '<select id="criteria" size="3"><option value="character-type">5 or more unique characters</option><option value="length-of-password">Length of Password</option><option value="fiat">Fiat</option><option value="audi">Audi</option>'
 // var specifiedLength = //document query for input
-
-
-//special characters I find acceptable to put in a password
+//Password criteria
+// At least 10 characters (and up to 100 characters)
+// 5 or more unique characters.
+// At least 3 of the following: uppercase, lowercase, numeric, or special characters. 
+// //special characters I find acceptable to put in a password
 //other ones do not make sense
 
 //if checkbox checked append it onto final array
