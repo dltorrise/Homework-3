@@ -12,6 +12,21 @@ const generateEl = document.getElementById('generate');
 const clipboard = document.getElementById('clipboard');
 
 
+/*criteria*/
+
+const criteria = document.getElementById('criteria')
+
+const html = '<div class="criteria-1"><label>Password length</label><input type="number" id="length" min='8' max='128' value='20' /></div><div class="criteria-2"><label>Include uppercase letters</label> <input type="checkbox" id="uppercase" checked /></div><div class="criteria-3"><label>Include lowercase letters</label> <input type="checkbox" id="lowercase" checked /></div><div class="criteria-4"><label>Include numbers</label> <input type="checkbox" id="numbers" checked /></div><div class="criteria-5"><label>Include symbols</label> <input type="checkbox" id="symbols" checked /></div>'
+
+const clickHandler = () => {
+  criteria.innerHTML = html
+}
+
+generate.addEventListener('Click', clickHandler)
+
+//then somehow make it so event listener generates password
+//after second click 
+
 const randomFunc = {
 	lower: getRandomLower,
 	upper: getRandomUpper,
@@ -69,17 +84,3 @@ function getRandomSymbol() {
 	return symbols[Math.floor(Math.random() * symbols.length)];
 }
 
-/*criteria*/
-
-const criteria = document.getElementById('criteria')
-
-const html = '<div class="criteria-1"><label>Password length</label><input type="number" id="length" min='8' max='128' value='20' /></div><div class="criteria-2"><label>Include uppercase letters</label> <input type="checkbox" id="uppercase" checked /></div><div class="criteria-3"><label>Include lowercase letters</label> <input type="checkbox" id="lowercase" checked /></div><div class="criteria-4"><label>Include numbers</label> <input type="checkbox" id="numbers" checked /></div><div class="criteria-5"><label>Include symbols</label> <input type="checkbox" id="symbols" checked /></div>'
-
-const clickHandler = () => {
-  criteria.innerHTML = HTML
-}
-
-criteria.addEventListener('Click', clickHandler)
-
-//then somehow make it so event listener generates password
-//after second click 
