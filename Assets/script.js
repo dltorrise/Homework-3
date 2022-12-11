@@ -13,20 +13,29 @@ function writePassword() {
 
 }
 
+var chars = "0123456789abcdefghijklmnopqrstuvwxyz!@#$%^&*()ABCDEFGHIJKLMNOPQRSTUVWXYZ";
+var passwordLength = 12;
+var password = "";
+
+for (var i = 0; i <= passwordLength; i++) {
+  var randomNumber = Math.floor(Math.random() * chars.length);
+  password += chars.substring(randomNumber, randomNumber +1);
+ }
+
+// var specifiedLength = //document query for input
 
 
-var alphabet = "abcdefghijklmnopqerstuvwxyz";
-var alphabetUpper = "ABCDEFGHIJKLMNOPQRSTUVWXYZ"
-var numbers = "1234567890"
-var specialCharacters = "`!@#$%&*_+=?"
+//special characters I find acceptable to put in a password
+//other ones do not make sense
 
 //if checkbox checked append it onto final array
-alphabet = alphabet.split('');
+alphabet = chars.split('');
 
 console.log(alphabet);
 //puts it into array
 
-Math.random();
+index = Math.floor(Math.random()*alphabet.length);
+passwordText.textContent += alphabet[index] //add letter to end of password
 //can generate random numbers to index random characters and append them only generated password
 
 // Add event listener to generate button
