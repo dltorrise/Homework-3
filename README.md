@@ -1,5 +1,12 @@
 # Homework 3
 
+My homework 3 is pretty cool. I added some cool things like a clipboard
+and returned to some CSS to format things. My homework has met the following
+criteria:
+
+- generates a random passowrd with numbers, letters, and special characters
+- allows user to choose the generation criteria
+- copy code to their clipboard
 
 # 03 JavaScript: Password Generator
 

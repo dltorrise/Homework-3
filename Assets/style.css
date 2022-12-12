@@ -30,6 +30,14 @@ body {
   padding-bottom: 7px;
 }
 
+#clipboard:hover {
+
+}
+
+.tooltiptext {
+  visibility: hidden;
+}
+
 #result {
   word-wrap: break-word;
   margin-top: 10px;
