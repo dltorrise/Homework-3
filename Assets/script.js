@@ -8,8 +8,10 @@ const uppercaseEl = document.getElementById('uppercase');
 const lowercaseEl = document.getElementById('lowercase');
 const numbersEl = document.getElementById('numbers');
 const symbolsEl = document.getElementById('symbols');
-const generateEl = document.getElementById('generate');
+const createEl = document.getElementById('create');
 const clipboard = document.getElementById('clipboard');
+const generateEl = document.getElementById('generate');
+const criteriaEl = document.querySelector('.criteria');
 
 //puts all function into an object
 const randomFunc = {
@@ -34,8 +36,8 @@ clipboard.addEventListener('click', () => {
 	alert('Password copied to clipboard');
 });
 
-//adds event listener to generate button
-generate.addEventListener('click', () => {
+//adds event listener to generate button (second button)
+create.addEventListener('click', () => {
 	const length = +lengthEl.value;
 	const hasLower = lowercaseEl.checked;
 	const hasUpper = uppercaseEl.checked;
@@ -113,21 +115,27 @@ function getRandomSymbol() {
 
 //grabs element you want to insert HTML into
 
-document.createElement('p');
+// document.createElement('p');
 
-const criteria = document.getElementById('criteria')
+// const criteria = document.getElementById('criteria')
 
 //html you want to insert
 
-const html = '<p>help</>'
-console.log(html)
+// const html = '<p>help</>'
+// console.log(html)
+
+
 
 //creates a function that adds in HTML
-const clickHandler = () => {
-  criteria.innerHTML = html
-};
+// const clickHandler = () => {
+//   criteria.innerHTML = html
+// };
 //event listener so when you click btn it runs functions
-generate.addEventListener('click', clickHandler);
+generateEl.addEventListener('click', function() {
+	generateEl.classList.add("hidden");
+	criteriaEl.classList.remove('hidden');
+	createEl.classList.remove('hidden');
+});
 
 
 //this should work
