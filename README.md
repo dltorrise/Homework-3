@@ -8,6 +8,8 @@ criteria:
 - allows user to choose the generation criteria
 - copy code to their clipboard
 
+[My inspiration](https://www.youtube.com/watch?v=duNmhKgtcsI)
+
 # 03 JavaScript: Password Generator
 
 ## Your Task
