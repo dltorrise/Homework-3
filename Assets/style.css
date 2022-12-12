@@ -23,11 +23,16 @@ body {
 }
 
 /*making button look nice */
+
+p {
+  font-weight: 400;
+}
 #clipboard {
   font-size: 15px;
-  padding: 20px;
-  padding-top: 7px;
-  padding-bottom: 7px;
+  padding: 15px;
+  padding-top: 3px;
+  padding-bottom: 3px;
+  justify-content: center;
 }
 
 /* Underline, black text, grab cursor */
@@ -52,9 +57,17 @@ span[data-descr]:hover::after {
   left: 100%;
 }
 
+.card-body {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  flex-wrap: wrap;
+}
+
 #result {
+  max-width: 80%;
   word-wrap: break-word;
-  margin-top: 10px;
+  text-align: center;
 }
 /*want to break a line */
 
@@ -72,9 +85,7 @@ right, actually have an icon, , and add messages
 for after password is generated
 and once coping to clipboard*/
 
-#clipboard {
-  display:none;
-}
+
 
 .hidden {
   display: none;
@@ -101,13 +112,6 @@ header {
   max-width: 800px;
   padding: 30px 40px;
   width: 80%;
-}
-
-#clipboard {
-  /*since the flex-direction is column this will move it to right*/
-
-  /*and this will move to horizontal center as opposed to its default */
-  justify-content: center;
 }
 
 .card-header::after {

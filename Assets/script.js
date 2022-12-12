@@ -80,7 +80,7 @@ function generatePassword(lower, upper, number, symbol, length) {
 	// if (finalPassword !== '') {
 	// displayMessage("Congratulations! You have generated a super secure password. Copy to your clipboard or generate another one!");
 	// }
-
+	clipboard.classList.remove('hidden');
 	return finalPassword;
 };
 
@@ -130,9 +130,12 @@ function getRandomSymbol() {
 // const clickHandler = () => {
 //   criteria.innerHTML = html
 // };
+
+//can also use window.prompt(), window.confirm() for criteria
+
 //event listener so when you click btn it runs functions
 generateEl.addEventListener('click', function() {
-	generateEl.classList.add("hidden");
+	generateEl.classList.add('hidden');
 	criteriaEl.classList.remove('hidden');
 	createEl.classList.remove('hidden');
 });
