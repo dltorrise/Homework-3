@@ -11,29 +11,30 @@ const symbolsEl = document.getElementById('symbols');
 const generateEl = document.getElementById('generate');
 const clipboard = document.getElementById('clipboard');
 
-
-/*criteria*/
-
-const criteria = document.getElementById('criteria')
-
-const html = '<div class="criteria-1"><label>Password length</label><input type="number" id="length" min='8' max='128' value='20' /></div><div class="criteria-2"><label>Include uppercase letters</label> <input type="checkbox" id="uppercase" checked /></div><div class="criteria-3"><label>Include lowercase letters</label> <input type="checkbox" id="lowercase" checked /></div><div class="criteria-4"><label>Include numbers</label> <input type="checkbox" id="numbers" checked /></div><div class="criteria-5"><label>Include symbols</label> <input type="checkbox" id="symbols" checked /></div>'
-
-const clickHandler = () => {
-  criteria.innerHTML = html
-}
-
-generate.addEventListener('Click', clickHandler)
-
-//then somehow make it so event listener generates password
-//after second click 
-
+//puts all function into an object
 const randomFunc = {
 	lower: getRandomLower,
 	upper: getRandomUpper,
 	number: getRandomNumber,
 	symbol: getRandomSymbol
-}
+};
 
+//clipboard
+clipboard.addEventListener('click', () => {
+	const textarea = document.createElement('textarea');
+	const password = resultEl.innerText;
+	
+	if(!password) { return; }
+	
+	textarea.value = password;
+	document.body.appendChild(textarea);
+	textarea.select();
+	document.execCommand('copy');
+	textarea.remove();
+	alert('Password copied to clipboard');
+});
+
+//adds event listener to generate button
 generate.addEventListener('click', () => {
 	const length = +lengthEl.value;
 	const hasLower = lowercaseEl.checked;
@@ -42,8 +43,10 @@ generate.addEventListener('click', () => {
 	const hasSymbol = symbolsEl.checked;
 	
 	resultEl.innerText = generatePassword(hasLower, hasUpper, hasNumber, hasSymbol, length);
+	//runs function so long as all parameters are set
 });
 
+//function that's put in event listener
 function generatePassword(lower, upper, number, symbol, length) {
 	let generatedPassword = '';
 	const typesCount = lower + upper + number + symbol;
@@ -51,7 +54,14 @@ function generatePassword(lower, upper, number, symbol, length) {
 	
 	// Doesn't have a selected type
 	if(typesCount === 0) {
+		alert("You must check at least one box");
+		//code will be unreachable if not written after the return statement
 		return '';
+	}
+	
+	if(length<8 || length>128) {
+		alert("Password must be between 8 and 128 characters")
+		return ''
 	}
 	
 	// create a loop
@@ -64,23 +74,65 @@ function generatePassword(lower, upper, number, symbol, length) {
 	
 	const finalPassword = generatedPassword.slice(0, length);
 	
+	// for some reason this isn't working and also throws off the rest of code 
+	// if (finalPassword !== '') {
+	// displayMessage("Congratulations! You have generated a super secure password. Copy to your clipboard or generate another one!");
+	// }
+
 	return finalPassword;
-}
+};
+
+//functions to get random letters, numbers, and characters
+//use from CharCode object and looks up numbers associated with certain characters
+//using Math.floor() and Math.random() to spit out a random character
 
 function getRandomLower() {
 	return String.fromCharCode(Math.floor(Math.random() * 26) + 97);
-}
+};
 
 function getRandomUpper() {
 	return String.fromCharCode(Math.floor(Math.random() * 26) + 65);
-}
+};
 
 function getRandomNumber() {
 	return +String.fromCharCode(Math.floor(Math.random() * 10) + 48);
-}
+};
 
 function getRandomSymbol() {
 	const symbols = '!@#$%^&*(){}[]=<>/,.'
 	return symbols[Math.floor(Math.random() * symbols.length)];
-}
+};
 
+
+
+
+
+
+
+//criteria
+
+//grabs element you want to insert HTML into
+
+document.createElement('p');
+
+const criteria = document.getElementById('criteria')
+
+//html you want to insert
+
+const html = '<p>help</>'
+console.log(html)
+
+//creates a function that adds in HTML
+const clickHandler = () => {
+  criteria.innerHTML = html
+};
+//event listener so when you click btn it runs functions
+generate.addEventListener('click', clickHandler);
+
+
+//this should work
+//it should spit out the criteria and then once the criteria is checked it will allow other
+//event listener to work
+
+//then somehow make it so event listener generates password
+//after second click 

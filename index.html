@@ -17,15 +17,38 @@
           <h2>Generate a Password</h2>
         </div>
         <div class="card-body">
-          <textarea
-            readonly
+          <span 
             id="result"
             placeholder="Your Secure Password"
             aria-label="Generated Password"
-          ></textarea>
+          ></span>
+          <button class="btn" id="clipboard">
+            <!--this actually would be a good place to add a tooltip-->
+            <i class="far fa-clipboard">Copy</i>
+          </button>
         </div>
         <div class="card-footer">
           <div class="criteria">
+              <div class="criteria-1">
+                <label>Password length</label>
+                <input type="number" id="length" min='8' max='128' value='8' />
+              </div>
+              <div class="criteria-2">
+                <label>Include uppercase letters</label> 
+                <input type="checkbox" id="uppercase" checked />
+              </div>
+              <div class="criteria-3">
+                <label>Include lowercase letters</label> 
+                <input type="checkbox" id="lowercase" checked />
+              </div>
+              <div class="criteria-4">
+                <label>Include numbers</label> 
+                <input type="checkbox" id="numbers" checked />
+              </div>
+              <div class="criteria-5">
+                <label>Include symbols</label> 
+                <input type="checkbox" id="symbols" checked />
+              </div>
           </div>
           <button id="generate" class="btn">Generate Password</button>
         </div>
