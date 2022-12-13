@@ -12,7 +12,7 @@ criteria:
 
 The website is live [here](https://dltorrise.github.io/Homework-3/)
 
-![Screenshot of my password generator](./Assets/screenshot.png)
+![Screenshot of my password generator](Assets/Images/screenshot.png)
 
 ## Creative differences
 
