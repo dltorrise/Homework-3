@@ -1,5 +1,8 @@
 // HOMEWORK-3
 
+/*In my own time, I would like to add local storage for the
+length and also clipboard icon*/
+
 //DOM elements
 const resultEl = document.getElementById('result');
 const lengthEl = document.getElementById('length');
@@ -56,12 +59,18 @@ function generatePassword(lower, upper, number, symbol, length) {
 	// Doesn't have a selected type
 	if(typesCount === 0) {
 		alert("You must check at least one box");
+		clipboard.classList.add('hidden');
 		//code will be unreachable if not written after the return statement
+
 		return '';
 	}
 	
 	if(length<8 || length>128) {
 		alert("Password must be between 8 and 128 characters")
+		//the purpose of these is so that if you don't meet the 
+		//constraints you don't still have to look at that
+		//ugly copy button
+		clipboard.classList.add('hidden');
 		return ''
 	}
 	
