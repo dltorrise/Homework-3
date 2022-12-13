@@ -14,7 +14,7 @@ The website is live [here](https://dltorrise.github.io/Homework-3/)
 
 ![Screenshot of my password generator](Assets/Images/screenshot.png)
 
-## Creative differences
+## FYI
 
 I may have completed this assignment in a different way than expected. It was brought to my attention that this assignment might be testing for use of the window.prompt() and window.confirm() methods to collect the user criteria. Instead, I created a form in the HTML and used event listeners to hide and display content as I pleased. I think that the way I did it looks better, but I can redo the assignment with these methods if that's what you wish. 
 
