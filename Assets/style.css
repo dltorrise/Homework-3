@@ -22,11 +22,12 @@ body {
   flex-direction: column;
 }
 
-/*making button look nice */
+/*making clipboard button look nice */
 
 p {
   font-weight: 400;
 }
+
 #clipboard {
   font-size: 15px;
   padding: 15px;
@@ -35,13 +36,13 @@ p {
   justify-content: center;
 }
 
-/* Underline, black text, grab cursor */
+/*tool tip*/
+
 span[data-descr] {
   position: relative;
   color: white;
 }
 
-/* Position tooltip above the term/phrase, same color as header and nav links, no border-radius, smaller font size */
 span[data-descr]:hover::after {
   content: attr(data-descr);
   position: absolute;
@@ -57,6 +58,15 @@ span[data-descr]:hover::after {
   left: 100%;
 }
 
+/*created a hidden class to hide buttons and
+criteria as I please */
+
+.hidden {
+  display: none;
+}
+
+/*formatting text so that it looks better */
+
 .card-body {
   display: flex;
   flex-direction: row;
@@ -69,7 +79,6 @@ span[data-descr]:hover::after {
   word-wrap: break-word;
   text-align: center;
 }
-/*want to break a line */
 
 .wrapper {
   display: flex;
@@ -79,20 +88,6 @@ span[data-descr]:hover::after {
   padding-right: 20px;
   justify-content: center;
 }
-
-/*I want to move clipboard icon to
-right, actually have an icon, , and add messages
-for after password is generated
-and once coping to clipboard*/
-
-
-
-.hidden {
-  display: none;
-}
-/*also any text formatting */
-
-
 
 header {
   text-align: center;

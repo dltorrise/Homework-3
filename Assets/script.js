@@ -1,5 +1,9 @@
 // Assignment Code
-//HOMEWORK
+// HOMEWORK
+
+//tonight I really just need to clean up my code
+//finish the readme 
+//organize files
 
 //DOM elements
 const resultEl = document.getElementById('result');
@@ -73,16 +77,19 @@ function generatePassword(lower, upper, number, symbol, length) {
 			generatedPassword += randomFunc[funcName]();
 		});
 	}
-	
+
 	const finalPassword = generatedPassword.slice(0, length);
 	
-	// for some reason this isn't working and also throws off the rest of code 
-	// if (finalPassword !== '') {
-	// displayMessage("Congratulations! You have generated a super secure password. Copy to your clipboard or generate another one!");
-	// }
+	//displayMessage("Congratulations! You have generated a super secure password. Copy to your clipboard or generate another one!");
+	//actually need to create a displaymessage function
+
 	clipboard.classList.remove('hidden');
 	return finalPassword;
 };
+
+// function displayMessage() {
+// 	//empty div and grab with query selector and just update text content
+// }
 
 //functions to get random letters, numbers, and characters
 //use from CharCode object and looks up numbers associated with certain characters
@@ -105,32 +112,6 @@ function getRandomSymbol() {
 	return symbols[Math.floor(Math.random() * symbols.length)];
 };
 
-
-
-
-
-
-
-//criteria
-
-//grabs element you want to insert HTML into
-
-// document.createElement('p');
-
-// const criteria = document.getElementById('criteria')
-
-//html you want to insert
-
-// const html = '<p>help</>'
-// console.log(html)
-
-
-
-//creates a function that adds in HTML
-// const clickHandler = () => {
-//   criteria.innerHTML = html
-// };
-
 //can also use window.prompt(), window.confirm() for criteria
 
 //event listener so when you click btn it runs functions
@@ -141,9 +122,3 @@ generateEl.addEventListener('click', function() {
 });
 
 
-//this should work
-//it should spit out the criteria and then once the criteria is checked it will allow other
-//event listener to work
-
-//then somehow make it so event listener generates password
-//after second click 
