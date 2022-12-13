@@ -1,9 +1,4 @@
-// Assignment Code
-// HOMEWORK
-
-//tonight I really just need to clean up my code
-//finish the readme 
-//organize files
+// HOMEWORK-3
 
 //DOM elements
 const resultEl = document.getElementById('result');
