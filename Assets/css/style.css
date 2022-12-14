@@ -1,4 +1,5 @@
-/*No more working on this file */
+/*only work from branch, to check put into terminal
+git rev-parse --abbrev-ref HEAD */
 
 /*on mobile browsers I want to get rid of the copy button and instead
 make the text selectable */
@@ -208,7 +209,6 @@ button[disabled] {
       user-select: all;
     }
   }
-}
 
 @media (max-width: 500px) {
   .btn {
