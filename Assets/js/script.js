@@ -59,7 +59,7 @@ create.addEventListener('click', () => {
 
 function setValue() {
 	var length = localStorage.getItem("length"); //gets length from local storage
-	lengthEl.value = length; //i'm thinking maybe that this isn't working
+	lengthEl.setAttribute("value", length); //i'm thinking maybe that this isn't working
 	console.log(length)
 }
 
@@ -143,3 +143,4 @@ generateEl.addEventListener('click', function() {
 });
 
 
+setValue(); //runs function everytime page is reloaded
