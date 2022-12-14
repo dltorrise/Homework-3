@@ -1,3 +1,5 @@
+/*No more working on this file */
+
 /*on mobile browsers I want to get rid of the copy button and instead
 make the text selectable */
 *,
@@ -196,6 +198,15 @@ button[disabled] {
 
   #password {
     font-size: 1rem;
+  }
+
+  #clipboard {
+    display:none;
+  }
+
+  #result {
+      user-select: all;
+    }
   }
 }
 
