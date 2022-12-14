@@ -17,6 +17,8 @@ const createEl = document.getElementById('create');
 const clipboard = document.getElementById('clipboard');
 const generateEl = document.getElementById('generate');
 const criteriaEl = document.querySelector('.criteria');
+const message = document.getElementById('display-message')
+
 
 //puts all function into an object
 const randomFunc = {
@@ -88,13 +90,16 @@ function generatePassword(lower, upper, number, symbol, length) {
 	}
 
 	const finalPassword = generatedPassword.slice(0, length);
-	
+	// for some reason this messes up my entire code
+	localStorage.getItem(length) //theoretically this should update the length in the local storage
+	localStorage.setItem("length", length)
 	displayMessage();
+	lengthEl.setAttribute('value',length)
 	clipboard.classList.remove('hidden');
 	return finalPassword;
 };
 
-message = document.getElementById('display-message')
+
 
 function displayMessage() {
 	message.textContent = "Congratulations! You have generated a super secure password. Copy to your clipboard or generate another one!"
