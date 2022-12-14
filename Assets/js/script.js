@@ -17,6 +17,8 @@ const createEl = document.getElementById('create');
 const clipboard = document.getElementById('clipboard');
 const generateEl = document.getElementById('generate');
 const criteriaEl = document.querySelector('.criteria');
+const message = document.getElementById('display-message')
+
 
 //puts all function into an object
 const randomFunc = {
@@ -48,10 +50,18 @@ create.addEventListener('click', () => {
 	const hasUpper = uppercaseEl.checked;
 	const hasNumber = numbersEl.checked;
 	const hasSymbol = symbolsEl.checked;
-	
+	localStorage.setItem("length", length); //sets length in local storage based on what you inputted
+	setValue(); 
 	resultEl.innerText = generatePassword(hasLower, hasUpper, hasNumber, hasSymbol, length);
 	//runs function so long as all parameters are set
+
 });
+
+function setValue() {
+	var length = localStorage.getItem("length"); //gets length from local storage
+	lengthEl.setAttribute("value", length); //i'm thinking maybe that this isn't working
+	console.log(length)
+}
 
 //function that's put in event listener
 function generatePassword(lower, upper, number, symbol, length) {
@@ -63,6 +73,7 @@ function generatePassword(lower, upper, number, symbol, length) {
 	if(typesCount === 0) {
 		alert("You must check at least one box");
 		clipboard.classList.add('hidden');
+		message.textContent = ''
 		//code will be unreachable if not written after the return statement
 
 		return '';
@@ -74,6 +85,7 @@ function generatePassword(lower, upper, number, symbol, length) {
 		//constraints you don't still have to look at that
 		//ugly copy button
 		clipboard.classList.add('hidden');
+		message.textContent = ''
 		return ''
 	}
 	
@@ -86,17 +98,19 @@ function generatePassword(lower, upper, number, symbol, length) {
 	}
 
 	const finalPassword = generatedPassword.slice(0, length);
-	
-	//displayMessage("Congratulations! You have generated a super secure password. Copy to your clipboard or generate another one!");
-	//actually need to create a displaymessage function
-
+	// for some reason this messes up my entire code
+	 //theoretically this should update the length in the local storage
+	//runs function to update value of input element in local storage
+	displayMessage();
 	clipboard.classList.remove('hidden');
 	return finalPassword;
 };
 
-// function displayMessage() {
-// 	//empty div and grab with query selector and just update text content
-// }
+
+
+function displayMessage() {
+	message.textContent = "Congratulations! You have generated a super secure password. Copy to your clipboard or generate another one!"
+}
 
 //functions to get random letters, numbers, and characters
 //use from CharCode object and looks up numbers associated with certain characters
@@ -129,3 +143,4 @@ generateEl.addEventListener('click', function() {
 });
 
 
+setValue(); //runs function everytime page is reloaded
