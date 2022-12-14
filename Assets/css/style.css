@@ -37,6 +37,11 @@ p {
   font-weight: 400;
 }
 
+h1,
+h2 {
+  text-align: center;
+}
+
 #clipboard {
   font-size: 15px;
   padding: 15px;
@@ -221,12 +226,12 @@ button[disabled] {
     }
 
     .noselect {
-      -webkit-touch-callout: all; /* iOS Safari */
-        -webkit-user-select: all; /* Safari */
-         -khtml-user-select: all; /* Konqueror HTML */
-           -moz-user-select: all; /* Old versions of Firefox */
-            -ms-user-select: all; /* Internet Explorer/Edge */
-                user-select: all; /* Non-prefixed version, currently
+      -webkit-touch-callout: default; /* iOS Safari */
+        -webkit-user-select: text; /* Safari */
+         -khtml-user-select: text; /* Konqueror HTML */
+           -moz-user-select: text; /* Old versions of Firefox */
+            -ms-user-select: text; /* Internet Explorer/Edge */
+                user-select: text; /* Non-prefixed version, currently
                                       supported by Chrome, Edge, Opera and Firefox */
     }
   }
