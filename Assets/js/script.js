@@ -51,6 +51,7 @@ create.addEventListener('click', () => {
 	const hasNumber = numbersEl.checked;
 	const hasSymbol = symbolsEl.checked;
 	localStorage.setItem("length", length); //sets length in local storage based on what you inputted
+	setValue(); 
 	resultEl.innerText = generatePassword(hasLower, hasUpper, hasNumber, hasSymbol, length);
 	//runs function so long as all parameters are set
 
@@ -58,7 +59,7 @@ create.addEventListener('click', () => {
 
 function setValue() {
 	var length = localStorage.getItem("length"); //gets length from local storage
-	lengthEl.value = length; //this should update the lenght
+	lengthEl.value = length; //i'm thinking maybe that this isn't working
 	console.log(length)
 }
 
@@ -99,7 +100,7 @@ function generatePassword(lower, upper, number, symbol, length) {
 	const finalPassword = generatedPassword.slice(0, length);
 	// for some reason this messes up my entire code
 	 //theoretically this should update the length in the local storage
-	setValue(); //runs function to update value of input element in local storage
+	//runs function to update value of input element in local storage
 	displayMessage();
 	clipboard.classList.remove('hidden');
 	return finalPassword;
