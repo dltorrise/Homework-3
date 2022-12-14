@@ -20,9 +20,9 @@ The website is live [here](https://dltorrise.github.io/Homework-3/)
 
 ## FYI
 
-I may have completed this assignment in a different way than expected. It was brought to my attention that this assignment might be testing for use of the window.prompt() and window.confirm() methods to collect the user criteria. Instead, I created a form in the HTML and used event listeners to hide and display content as I pleased. I think that the way I did it looks better, but I can redo the assignment with these methods if that's what you wish. 
+I may have completed this assignment in a different way than expected. It was brought to my attention that this assignment might be testing for use of the window.prompt() and window.confirm() methods to collect the user criteria. Instead, I created a form in the HTML and used event listeners to hide and display content as I pleased. I think that the way I did it looks better, but I can redo the assignment with the window.prompt() and window.confirm() methods if that's what you wish. 
 
-If constraints are not met, an alert dialog box will pop up and no password will be generated. 
+My homework has met all of the acceptance criteria otherwise. If constraints are not met, an alert dialog box will pop up and no password will be generated. 
 
 [My inspiration](https://www.youtube.com/watch?v=duNmhKgtcsI)
 
