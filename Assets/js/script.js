@@ -1,6 +1,7 @@
 // HOMEWORK-3
 // No more working in the file
 // ONLY WORK FROM BRANCH
+// To check branch: git rev-parse --abbrev-ref HEAD
 
 /*In my own time, I would like to add local storage for the
 length and also clipboard icon*/
