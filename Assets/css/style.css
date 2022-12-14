@@ -207,6 +207,10 @@ button[disabled] {
 
   #result {
       user-select: all;
+     /* user-select is in standardization process 
+     (currently in a W3C working draft). It is not 
+     guaranteed to work everywhere and there might 
+     be differences in implementation among browsers.*/
     }
   }
 
