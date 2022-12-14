@@ -10,6 +10,7 @@ criteria:
   2. At least one character type must be selected
 - allows user to choose the generation criteria
 - copy code to their clipboard
+- local storage for value input into length (so it doesn't make you retype your preferred length after refreshing the page)
 
 ## Link and Screenshot
 
