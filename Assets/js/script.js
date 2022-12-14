@@ -63,6 +63,7 @@ function generatePassword(lower, upper, number, symbol, length) {
 	if(typesCount === 0) {
 		alert("You must check at least one box");
 		clipboard.classList.add('hidden');
+		message.textContent = ''
 		//code will be unreachable if not written after the return statement
 
 		return '';
@@ -74,6 +75,7 @@ function generatePassword(lower, upper, number, symbol, length) {
 		//constraints you don't still have to look at that
 		//ugly copy button
 		clipboard.classList.add('hidden');
+		message.textContent = ''
 		return ''
 	}
 	
@@ -87,16 +89,16 @@ function generatePassword(lower, upper, number, symbol, length) {
 
 	const finalPassword = generatedPassword.slice(0, length);
 	
-	//displayMessage("Congratulations! You have generated a super secure password. Copy to your clipboard or generate another one!");
-	//actually need to create a displaymessage function
-
+	displayMessage();
 	clipboard.classList.remove('hidden');
 	return finalPassword;
 };
 
-// function displayMessage() {
-// 	//empty div and grab with query selector and just update text content
-// }
+message = document.getElementById('display-message')
+
+function displayMessage() {
+	message.textContent = "Congratulations! You have generated a super secure password. Copy to your clipboard or generate another one!"
+}
 
 //functions to get random letters, numbers, and characters
 //use from CharCode object and looks up numbers associated with certain characters
