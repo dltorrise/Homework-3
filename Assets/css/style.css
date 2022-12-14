@@ -204,13 +204,26 @@ button[disabled] {
   #clipboard {
     display:none;
   }
+  .card-body {
+    justify-content: center;
 
+  }
   #result {
       user-select: all;
      /* user-select is in standardization process 
      (currently in a W3C working draft). It is not 
      guaranteed to work everywhere and there might 
      be differences in implementation among browsers.*/
+    }
+
+    .noselect {
+      -webkit-touch-callout: all; /* iOS Safari */
+        -webkit-user-select: all; /* Safari */
+         -khtml-user-select: all; /* Konqueror HTML */
+           -moz-user-select: all; /* Old versions of Firefox */
+            -ms-user-select: all; /* Internet Explorer/Edge */
+                user-select: all; /* Non-prefixed version, currently
+                                      supported by Chrome, Edge, Opera and Firefox */
     }
   }
 
