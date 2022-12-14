@@ -1,6 +1,10 @@
 /*only work from branch, to check put into terminal
 git rev-parse --abbrev-ref HEAD */
 
+/* git checkout main
+git merge -Not-homework-just-extra
+merges branches*/
+
 /*on mobile browsers I want to get rid of the copy button and instead
 make the text selectable */
 *,
