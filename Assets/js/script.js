@@ -58,8 +58,10 @@ create.addEventListener('click', () => {
 });
 
 function setValue() {
+	lengthEl.setAttribute("value", 8); //this is the default, but for some reason this isn't working
+	console.log(lengthEl.value)
 	var length = localStorage.getItem("length"); //gets length from local storage
-	lengthEl.setAttribute("value", length); //i'm thinking maybe that this isn't working
+	lengthEl.setAttribute("value", length); 
 	console.log(length)
 }
 
@@ -69,7 +71,8 @@ function generatePassword(lower, upper, number, symbol, length) {
 	const typesCount = lower + upper + number + symbol;
 	const typesArr = [{lower}, {upper}, {number}, {symbol}].filter(item => Object.values(item)[0]);
 	
-	// Doesn't have a selected type
+	// must check at least one box constraint
+
 	if(typesCount === 0) {
 		alert("You must check at least one box");
 		clipboard.classList.add('hidden');
@@ -78,6 +81,8 @@ function generatePassword(lower, upper, number, symbol, length) {
 
 		return '';
 	}
+
+	//length constraint
 	
 	if(length<8 || length>128) {
 		alert("Password must be between 8 and 128 characters")
@@ -89,7 +94,7 @@ function generatePassword(lower, upper, number, symbol, length) {
 		return ''
 	}
 	
-	// create a loop
+	// create a loop to create full password
 	for(let i=0; i<length; i+=typesCount) {
 		typesArr.forEach(type => {
 			const funcName = Object.keys(type)[0];
@@ -98,9 +103,7 @@ function generatePassword(lower, upper, number, symbol, length) {
 	}
 
 	const finalPassword = generatedPassword.slice(0, length);
-	// for some reason this messes up my entire code
-	 //theoretically this should update the length in the local storage
-	//runs function to update value of input element in local storage
+	// displays a message and shows clipboard to copy
 	displayMessage();
 	clipboard.classList.remove('hidden');
 	return finalPassword;
