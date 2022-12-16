@@ -14,7 +14,7 @@ criteria:
 
 ## Link and Screenshot
 
-The website is live [here](https://dltorrise.github.io/Homework-3/)
+The website is live [here](https://dltorrise.github.io/Random-Password-Generator/)
 
 ![Screenshot of my password generator](Assets/Images/screenshot.png)
 
