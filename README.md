@@ -30,7 +30,7 @@ Thank you to Traversy Media for helping me create this Random Password Generator
 
 [Video](https://www.youtube.com/watch?v=duNmhKgtcsI)
 
-[My Channel](https://www.youtube.com/@TraversyMedia)
+[Their Channel](https://www.youtube.com/@TraversyMedia)
 
 
 
