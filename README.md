@@ -24,5 +24,13 @@ I may have completed this assignment in a different way than expected. It was br
 
 My homework has met all of the acceptance criteria otherwise. If constraints are not met, an alert dialog box will pop up and no password will be generated. 
 
-[My inspiration](https://www.youtube.com/watch?v=duNmhKgtcsI)
+## Acknowledgements 
+
+Thank you to Traversy Media for helping me create this Random Password Generator. This video helped me learn to create 
+
+[Video](https://www.youtube.com/watch?v=duNmhKgtcsI)
+
+[Their Channel](https://www.youtube.com/@TraversyMedia)
+
+
 
