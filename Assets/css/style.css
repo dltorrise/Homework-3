@@ -210,6 +210,10 @@ button[disabled] {
     font-size: 1rem;
   }
 
+  #tool-tip {
+    display: none;
+  }
+  
   #clipboard {
     display:none;
   }
